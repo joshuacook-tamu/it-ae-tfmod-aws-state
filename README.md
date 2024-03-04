@@ -1,7 +1,7 @@
 # it-ae-tfmod-aws-state
 This is a terraform module for initializing a terraform state backend in AWS. 
 
-It creates an S3 bucket and a dynamodb table named `terraform-state-{account_id}`. 
+It creates an S3 bucket and a dynamodb table named `terraform-state-{account_id}` by default, which can be customized with inputs. 
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -30,7 +30,10 @@ No modules.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The name of the S3 bucket to create for storing the Terraform state | `string` | `null` | no |
+| <a name="input_dynamodb_table_name"></a> [dynamodb\_table\_name](#input\_dynamodb\_table\_name) | The name of the DynamoDB table to create for storing the Terraform state lock | `string` | `null` | no |
 
 ## Outputs
 
